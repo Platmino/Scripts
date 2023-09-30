@@ -1,0 +1,293 @@
+-- UI LIBRARY SOURCE CODE
+
+--[[
+local TabButtonHolster = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local TabFrameHolster = Instance.new("Frame")
+local CategoryLabel = Instance.new("TextLabel")
+local UICorner_2 = Instance.new("UICorner")
+local UIListLayout = Instance.new("UIListLayout")
+local ButtonHolster = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local IDK = Instance.new("Frame")
+]]
+
+
+
+
+
+
+
+
+local Library = {}
+local Tabs = {}
+local Connects = {}
+
+function Library:Create()
+	local UI_Library = Instance.new("ScreenGui")
+	local TopPanel = Instance.new("Frame")
+	local TextLabel = Instance.new("TextLabel")
+	local ImageLabel = Instance.new("ImageLabel")
+	local SidePanel = Instance.new("Frame")
+	local IDK = Instance.new("Frame")
+
+	UI_Library.Name = "UI_Library"
+	UI_Library.Parent = game.CoreGui
+
+	TopPanel.Name = "TopPanel"
+	TopPanel.Parent = UI_Library
+	TopPanel.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+	TopPanel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TopPanel.BorderSizePixel = 0
+	TopPanel.Position = UDim2.new(0.542962551, 0, 0.370558381, 0)
+	TopPanel.Size = UDim2.new(0.259356886, 0, 0.0355329961, 0)
+	TopPanel.Draggable = true
+
+	TextLabel.Parent = TopPanel
+	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.BackgroundTransparency = 1.000
+	TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TextLabel.BorderSizePixel = 0
+	TextLabel.Position = UDim2.new(0.103218541, 0, 0.22857143, 0)
+	TextLabel.Size = UDim2.new(0.654471517, 0, 0.54285717, 0)
+	TextLabel.Font = Enum.Font.Gotham
+	TextLabel.Text = "Mino's Selling GUI | Source Code"
+	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.TextScaled = true
+	TextLabel.TextSize = 14.000
+	TextLabel.TextWrapped = true
+	TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+	ImageLabel.Parent = TopPanel
+	ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ImageLabel.BackgroundTransparency = 1.000
+	ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ImageLabel.BorderSizePixel = 0
+	ImageLabel.Position = UDim2.new(0.0291928891, 0, 0.0931222066, 0)
+	ImageLabel.Size = UDim2.new(0.0670731738, 0, 0.771428585, 0)
+	ImageLabel.Image = "rbxassetid://14918483523"
+
+	SidePanel.Name = "SidePanel"
+	SidePanel.Parent = TopPanel
+	SidePanel.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+	SidePanel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	SidePanel.BorderSizePixel = 0
+	SidePanel.Position = UDim2.new(0, 0, 0.97751987, 0)
+	SidePanel.Size = UDim2.new(0.252032518, 0, 6.19999981, 0)
+	
+	IDK.Name = "IDK"
+	IDK.Parent = TopPanel
+	IDK.BackgroundColor3 = Color3.fromRGB(102, 102, 102)
+	IDK.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	IDK.BorderSizePixel = 0
+	IDK.Position = UDim2.new(0.252032518, 0, 0.977518141, 0)
+	IDK.Size = UDim2.new(0, 368, 0, 4)
+	
+
+	
+
+	function Tabs:Tab(Name)
+		local TabButtonHolster = Instance.new("TextButton")
+		local TabFrameHolster = Instance.new("Frame")
+		local UIListLayout = Instance.new("UIListLayout")
+
+		TabButtonHolster.Name = Name
+		TabButtonHolster.Parent = SidePanel
+		TabButtonHolster.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+		TabButtonHolster.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		TabButtonHolster.BorderSizePixel = 0
+		TabButtonHolster.Position = UDim2.new(0.0564516112, 0, 0.0460829511, 0)
+		TabButtonHolster.Size = UDim2.new(0.838709652, 0, 0.138248846, 0)
+		TabButtonHolster.Font = Enum.Font.Gotham
+		TabButtonHolster.Text = Name
+		TabButtonHolster.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TabButtonHolster.TextSize = 14.000
+
+		TabFrameHolster.Name = Name
+		TabFrameHolster.Parent = TopPanel
+		TabFrameHolster.BackgroundColor3 = Color3.fromRGB(102, 102, 102)
+		TabFrameHolster.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		TabFrameHolster.BorderSizePixel = 0
+		TabFrameHolster.Position = UDim2.new(0.252032518, 0, 1, 0)
+		TabFrameHolster.Size = UDim2.new(0, 368, 0, 216)
+
+		UIListLayout.Parent = TabFrameHolster
+		UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+		UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+		UIListLayout.Padding = UDim.new(0, 3)
+
+		
+
+		function Connects:Section(Name)
+			local UICorner_2 = Instance.new("UICorner")
+			local CategoryLabel = Instance.new("TextLabel")
+
+			CategoryLabel.Name = Name
+			CategoryLabel.Parent = TabFrameHolster
+			CategoryLabel.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+			CategoryLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			CategoryLabel.BorderSizePixel = 0
+			CategoryLabel.Position = UDim2.new(0.0500000678, 0, 0.0833333358, 0)
+			CategoryLabel.Size = UDim2.new(0.899999976, 0, 0.150000006, 0)
+			CategoryLabel.Font = Enum.Font.Gotham
+			CategoryLabel.Text = Name
+			CategoryLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+			CategoryLabel.TextSize = 21.000
+			CategoryLabel.TextWrapped = true
+			
+			UICorner_2.CornerRadius = UDim.new(0, 3)
+			UICorner_2.Parent = CategoryLabel
+			
+
+			return Connects
+		end
+		
+		function Connects:Button(Name, CallBack)
+			local ButtonHolster = Instance.new("TextButton")
+			local UICorner_3 = Instance.new("UICorner")
+			
+			ButtonHolster.Name = "ButtonHolster"
+			ButtonHolster.Parent = TabFrameHolster
+			ButtonHolster.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+			ButtonHolster.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			ButtonHolster.BorderSizePixel = 0
+			ButtonHolster.Position = UDim2.new(0.0564516112, 0, 0.0460829511, 0)
+			ButtonHolster.Size = UDim2.new(0.899999976, 0, 0.150000006, 0)
+			ButtonHolster.Font = Enum.Font.Gotham
+			ButtonHolster.Text = "ButtonText"
+			ButtonHolster.TextColor3 = Color3.fromRGB(255, 255, 255)
+			ButtonHolster.TextSize = 14.000
+
+			UICorner_3.CornerRadius = UDim.new(0, 3)
+			UICorner_3.Parent = ButtonHolster
+			
+			ButtonHolster.MouseButton1Click:Connect(function()
+				CallBack()
+			end)
+			
+			return Connects
+		end
+
+		return Connects
+	end
+
+	return Tabs
+end
+
+return Library
+
+
+--[[
+
+UI_Library.Name = "UI_Library"
+UI_Library.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+UI_Library.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+UI_Library.ResetOnSpawn = false
+
+TopPanel.Name = "TopPanel"
+TopPanel.Parent = UI_Library
+TopPanel.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+TopPanel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TopPanel.BorderSizePixel = 0
+TopPanel.Position = UDim2.new(0.542962551, 0, 0.370558381, 0)
+TopPanel.Size = UDim2.new(0.259356886, 0, 0.0355329961, 0)
+
+TextLabel.Parent = TopPanel
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.103218541, 0, 0.22857143, 0)
+TextLabel.Size = UDim2.new(0.654471517, 0, 0.54285717, 0)
+TextLabel.Font = Enum.Font.Gotham
+TextLabel.Text = "Mino's Selling GUI | Source Code"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+ImageLabel.Parent = TopPanel
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.0291928891, 0, 0.0931222066, 0)
+ImageLabel.Size = UDim2.new(0.0670731738, 0, 0.771428585, 0)
+ImageLabel.Image = "rbxassetid://14918483523"
+
+SidePanel.Name = "SidePanel"
+SidePanel.Parent = TopPanel
+SidePanel.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+SidePanel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SidePanel.BorderSizePixel = 0
+SidePanel.Position = UDim2.new(0, 0, 0.97751987, 0)
+SidePanel.Size = UDim2.new(0.252032518, 0, 6.19999981, 0)
+
+TabButtonHolster.Name = "TabButtonHolster"
+TabButtonHolster.Parent = SidePanel
+TabButtonHolster.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+TabButtonHolster.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TabButtonHolster.BorderSizePixel = 0
+TabButtonHolster.Position = UDim2.new(0.0564516112, 0, 0.0460829511, 0)
+TabButtonHolster.Size = UDim2.new(0.838709652, 0, 0.138248846, 0)
+TabButtonHolster.Font = Enum.Font.Gotham
+TabButtonHolster.Text = "Tab"
+TabButtonHolster.TextColor3 = Color3.fromRGB(255, 255, 255)
+TabButtonHolster.TextSize = 14.000
+
+UICorner.CornerRadius = UDim.new(0, 5)
+UICorner.Parent = TabButtonHolster
+
+TabFrameHolster.Name = "TabFrameHolster"
+TabFrameHolster.Parent = TopPanel
+TabFrameHolster.BackgroundColor3 = Color3.fromRGB(102, 102, 102)
+TabFrameHolster.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TabFrameHolster.BorderSizePixel = 0
+TabFrameHolster.Position = UDim2.new(0.252032518, 0, 1.09180391, 0)
+TabFrameHolster.Size = UDim2.new(0.747967482, 0, 5.88571405, 0)
+
+CategoryLabel.Name = "CategoryLabel"
+CategoryLabel.Parent = TabFrameHolster
+CategoryLabel.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+CategoryLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CategoryLabel.BorderSizePixel = 0
+CategoryLabel.Position = UDim2.new(0.0500000678, 0, 0.0833333358, 0)
+CategoryLabel.Size = UDim2.new(0.899999976, 0, 0.150000006, 0)
+CategoryLabel.Font = Enum.Font.Gotham
+CategoryLabel.Text = "HolsterText"
+CategoryLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+CategoryLabel.TextSize = 21.000
+CategoryLabel.TextWrapped = true
+
+UICorner_2.CornerRadius = UDim.new(0, 3)
+UICorner_2.Parent = CategoryLabel
+
+UIListLayout.Parent = TabFrameHolster
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 3)
+
+ButtonHolster.Name = "ButtonHolster"
+ButtonHolster.Parent = TabFrameHolster
+ButtonHolster.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ButtonHolster.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ButtonHolster.BorderSizePixel = 0
+ButtonHolster.Position = UDim2.new(0.0564516112, 0, 0.0460829511, 0)
+ButtonHolster.Size = UDim2.new(0.899999976, 0, 0.150000006, 0)
+ButtonHolster.Font = Enum.Font.Gotham
+ButtonHolster.Text = "ButtonText"
+ButtonHolster.TextColor3 = Color3.fromRGB(255, 255, 255)
+ButtonHolster.TextSize = 14.000
+
+UICorner_3.CornerRadius = UDim.new(0, 3)
+UICorner_3.Parent = ButtonHolster
+
+IDK.Name = "IDK"
+IDK.Parent = TopPanel
+IDK.BackgroundColor3 = Color3.fromRGB(102, 102, 102)
+IDK.BorderColor3 = Color3.fromRGB(0, 0, 0)
+IDK.BorderSizePixel = 0
+IDK.Position = UDim2.new(0.252032518, 0, 0.977518141, 0)
+IDK.Size = UDim2.new(0, 368, 0, 4)
+]]
