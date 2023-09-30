@@ -33,6 +33,9 @@ function Library:Create()
 
 	UI_Library.Name = "UI_Library"
 	UI_Library.Parent = game.CoreGui
+	UI_Library.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	UI_Library.ResetOnSpawn = false
+	UI_Library.Draggable = true
 
 	TopPanel.Name = "TopPanel"
 	TopPanel.Parent = UI_Library
@@ -41,7 +44,6 @@ function Library:Create()
 	TopPanel.BorderSizePixel = 0
 	TopPanel.Position = UDim2.new(0.542962551, 0, 0.370558381, 0)
 	TopPanel.Size = UDim2.new(0.259356886, 0, 0.0355329961, 0)
-	TopPanel.Draggable = true
 
 	TextLabel.Parent = TopPanel
 	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
