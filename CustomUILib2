@@ -35,7 +35,6 @@ function Library:Create()
 	UI_Library.Parent = game.CoreGui
 	UI_Library.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	UI_Library.ResetOnSpawn = false
-	UI_Library.Draggable = true
 
 	TopPanel.Name = "TopPanel"
 	TopPanel.Parent = UI_Library
