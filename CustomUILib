@@ -120,8 +120,7 @@ function Library:Create()
 	end
 	
 	
-	local Sections = {}
-	function Sections:Section(Name)
+	function GamerLibrary:Section(Name)
 		CategoryLabel.Name = Name
 		CategoryLabel.Parent = TabFrameHolster
 		CategoryLabel.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
@@ -134,7 +133,6 @@ function Library:Create()
 		CategoryLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 		CategoryLabel.TextSize = 21.000
 		CategoryLabel.TextWrapped = true
-		return Sections
 	end
 	
 	
