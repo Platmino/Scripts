@@ -116,7 +116,7 @@ function Library:Create()
 		UIListLayout.Padding = UDim.new(0, 3)
 		
 		
-		return GamerLibrary
+		
 	end
 	
 	
@@ -138,7 +138,7 @@ function Library:Create()
 	end
 	
 	
-	
+	return GamerLibrary
 end
 
 return Library
