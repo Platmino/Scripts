@@ -35,6 +35,7 @@ function Library:Create()
 	UI_Library.Parent = game.CoreGui
 	UI_Library.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	UI_Library.ResetOnSpawn = false
+	UI_Library.Draggable = true
 
 	TopPanel.Name = "TopPanel"
 	TopPanel.Parent = UI_Library
@@ -43,7 +44,6 @@ function Library:Create()
 	TopPanel.BorderSizePixel = 0
 	TopPanel.Position = UDim2.new(0.542962551, 0, 0.370558381, 0)
 	TopPanel.Size = UDim2.new(0.259356886, 0, 0.0355329961, 0)
-	TopPanel.Draggable = true
 
 	TextLabel.Parent = TopPanel
 	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -92,6 +92,7 @@ function Library:Create()
 		local TabButtonHolster = Instance.new("TextButton")
 		local TabFrameHolster = Instance.new("Frame")
 		local UIListLayout = Instance.new("UIListLayout")
+		local UICorner = Instance.new("UICorner")
 
 		TabButtonHolster.Name = Name
 		TabButtonHolster.Parent = SidePanel
@@ -105,18 +106,28 @@ function Library:Create()
 		TabButtonHolster.TextColor3 = Color3.fromRGB(255, 255, 255)
 		TabButtonHolster.TextSize = 14.000
 
+		UICorner.CornerRadius = UDim.new(0, 5)
+		UICorner.Parent = TabButtonHolster
+
 		TabFrameHolster.Name = Name
 		TabFrameHolster.Parent = TopPanel
 		TabFrameHolster.BackgroundColor3 = Color3.fromRGB(102, 102, 102)
 		TabFrameHolster.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		TabFrameHolster.BorderSizePixel = 0
-		TabFrameHolster.Position = UDim2.new(0.252032518, 0, 1, 0)
-		TabFrameHolster.Size = UDim2.new(0, 368, 0, 216)
-
-		UIListLayout.Parent = TabFrameHolster
-		UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-		UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-		UIListLayout.Padding = UDim.new(0, 3)
+		TabFrameHolster.Position = UDim2.new(0.252032518, 0, 1.09180391, 0)
+		TabFrameHolster.Size = UDim2.new(0.747967482, 0, 5.88571405, 0)
+		
+		TabButtonHolster.MouseButton1Click:Connect(function()
+			for i,v in pairs(SidePanel:GetChildren()) do
+				if v:IsA("Frame") or v:IsA("ScrollingFrame") then
+					if v.Name == Name then
+						v.Visible = true
+					else
+						v.Visible = false
+					end
+				end
+			end
+		end)
 
 		
 
