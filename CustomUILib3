@@ -116,6 +116,11 @@ function Library:Create()
 		TabFrameHolster.Position = UDim2.new(0.252032518, 0, 1.09180391, 0)
 		TabFrameHolster.Size = UDim2.new(0.747967482, 0, 5.88571405, 0)
 		
+		UIListLayout.Parent = TabFrameHolster
+		UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+		UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+		UIListLayout.Padding = UDim.new(0, 3)
+		
 		TabButtonHolster.MouseButton1Click:Connect(function()
 			for i,v in pairs(SidePanel:GetChildren()) do
 				if v:IsA("Frame") or v:IsA("ScrollingFrame") then
