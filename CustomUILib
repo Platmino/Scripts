@@ -85,9 +85,19 @@ function Library:Create()
 		TabButtonHolster.Position = UDim2.new(0.0564516112, 0, 0.0460829511, 0)
 		TabButtonHolster.Size = UDim2.new(0.838709652, 0, 0.138248846, 0)
 		TabButtonHolster.Font = Enum.Font.Gotham
-		TabButtonHolster.Text = "Tab"
+		TabButtonHolster.Text = Name
 		TabButtonHolster.TextColor3 = Color3.fromRGB(255, 255, 255)
 		TabButtonHolster.TextSize = 14.000
+		
+		TabButtonHolster.MouseButton1Click:Connect(function()
+			for i,v in pairs(SidePanel:GetChildren()) do
+				if v.Name ~= Name then
+					v.Visible = false
+				else
+					v.Visible = true
+				end
+			end
+		end)
 		
 		UICorner.CornerRadius = UDim.new(0, 5)
 		UICorner.Parent = TabButtonHolster
@@ -118,7 +128,7 @@ function Library:Create()
 		CategoryLabel.Position = UDim2.new(0.0500000678, 0, 0.0833333358, 0)
 		CategoryLabel.Size = UDim2.new(0.899999976, 0, 0.150000006, 0)
 		CategoryLabel.Font = Enum.Font.Gotham
-		CategoryLabel.Text = "HolsterText"
+		CategoryLabel.Text = Name
 		CategoryLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 		CategoryLabel.TextSize = 21.000
 		CategoryLabel.TextWrapped = true
