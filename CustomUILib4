@@ -1,0 +1,60 @@
+local UI_Library = Instance.new("ScreenGui")
+local TopPanel = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local ImageLabel = Instance.new("ImageLabel")
+local SidePanel = Instance.new("Frame")
+
+local Library = {}
+local Tabs = {}
+local Sections = {}
+
+function Library:Create()
+    -- Your existing code for creating the UI elements
+
+    function Tabs:Tab(Name)
+        -- Your existing code for creating tabs
+        local TabFrameHolster = Instance.new("Frame")
+        local UIListLayout = Instance.new("UIListLayout")
+
+        TabFrameHolster.Name = Name
+        TabFrameHolster.Parent = TopPanel
+        TabFrameHolster.BackgroundColor3 = Color3.fromRGB(102, 102, 102)
+        TabFrameHolster.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        TabFrameHolster.BorderSizePixel = 0
+        TabFrameHolster.Position = UDim2.new(0.252032518, 0, 1, 0)
+        TabFrameHolster.Size = UDim2.new(0, 368, 0, 216)
+
+        UIListLayout.Parent = TabFrameHolster
+        UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+        UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+        UIListLayout.Padding = UDim.new(0, 3)
+        
+        -- Return Sections here
+        return Sections
+    end
+
+    function Sections:Section(Name)
+        -- Your existing code for creating sections
+        local CategoryLabel = Instance.new("TextLabel")
+
+        CategoryLabel.Name = Name
+        CategoryLabel.Parent = TabFrameHolster
+        CategoryLabel.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+        CategoryLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        CategoryLabel.BorderSizePixel = 0
+        CategoryLabel.Position = UDim2.new(0.0500000678, 0, 0.0833333358, 0)
+        CategoryLabel.Size = UDim2.new(0.899999976, 0, 0.150000006, 0)
+        CategoryLabel.Font = Enum.Font.Gotham
+        CategoryLabel.Text = Name
+        CategoryLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+        CategoryLabel.TextSize = 21.000
+        CategoryLabel.TextWrapped = true
+        
+        -- Return Sections here
+        return Sections
+    end
+
+    return Tabs
+end
+
+return Library
