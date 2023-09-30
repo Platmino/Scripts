@@ -12,6 +12,8 @@ local UIListLayout = Instance.new("UIListLayout")
 ]]
 
 local Library = {}
+local Tabs = {}
+local Sections = {}
 
 function Library:Create()
 	local UI_Library = Instance.new("ScreenGui")
@@ -74,9 +76,9 @@ function Library:Create()
 
 
 	
-	local GamerLibrary = {}
 	
-	function GamerLibrary:Tab(Name)
+	
+	function Tabs:Tab(Name)
 		TabButtonHolster.Name = Name
 		TabButtonHolster.Parent = SidePanel
 		TabButtonHolster.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
@@ -120,7 +122,7 @@ function Library:Create()
 	end
 	
 	
-	function GamerLibrary:Section(Name)
+	function Sections:Section(Name)
 		CategoryLabel.Name = Name
 		CategoryLabel.Parent = TabFrameHolster
 		CategoryLabel.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
@@ -133,10 +135,11 @@ function Library:Create()
 		CategoryLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 		CategoryLabel.TextSize = 21.000
 		CategoryLabel.TextWrapped = true
+		return Sections
 	end
 	
 	
-	return GamerLibrary
+	return Tabs
 end
 
 return Library
